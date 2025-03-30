@@ -1,0 +1,133 @@
+version: '3.9'
+
+services:
+
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Sairahul5583@
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - repms-net
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    ports:
+      - "2181:2181"
+    networks:
+      - repms-net
+    volumes:
+      - zookeeper_data:/var/lib/zookeeper
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    networks:
+      - repms-net
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+  
+  user-service:
+    restart: always
+    build:
+      context: /home/ubuntu/REPMS/backend/user-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+      - kafka
+    networks:
+      - repms-net
+  property-service:
+    restart: always
+    build:
+      context: /home/ubuntu/REPMS/backend/property-service
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - postgres
+      - kafka
+    networks:
+      - repms-net
+
+  inquiry-service:
+    restart: always
+    build:
+      context: /home/ubuntu/REPMS/backend/inquiry-service
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
+    depends_on:
+      - postgres
+      - kafka
+    networks:
+      - repms-net
+
+  analytics-service:
+    restart: always
+    build:
+      context: /home/ubuntu/REPMS/backend/analytics-service
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8084"
+    depends_on:
+      - postgres
+      - kafka
+    networks:
+      - repms-net
+
+  profile-service:
+    restart: always
+    build:
+      context: /home/ubuntu/REPMS/backend/profileproperty-service
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"
+    depends_on:
+      - postgres
+      - kafka
+    networks:
+      - repms-net
+
+  frontend:
+    restart: always
+    build:
+      context: /home/ubuntu/REPMS/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - repms-net
+    depends_on:
+      - user-service
+      - property-service
+      - inquiry-service
+      - analytics-service
+      - profile-service
+
+volumes:
+  pgdata:
+  zookeeper_data:
+  kafka_data:
+
+networks:
+  repms-net:
+    driver: bridge
