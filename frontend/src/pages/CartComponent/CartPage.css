@@ -1,0 +1,57 @@
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-img {
+  max-width: 100%;
+  height: auto;
+}
+.card-title{
+  margin-top: 20%;
+  color: #212529;
+  font-weight: bolder;
+}
+.card-text{
+  color: #212529;
+  font-weight: bolder;
+}
+.instore-option {
+  color: #212529;
+  font-weight: bolder;
+  background-color: #ffa500
+}
+.instore-option button {
+  border-color: #ffa500; /* Adjust the color to match the provided design */
+  color: #000;
+}
+
+.instore-option button:hover {
+  background-color: #ffa500; /* Adjust for hover state */
+  color: #000;
+}
+
+.order-summary-content {
+  background-color: #f8f9fa; /* Light gray background, adjust as needed */
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.order-summary-content .subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
