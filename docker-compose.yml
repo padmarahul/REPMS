@@ -97,7 +97,7 @@ services:
   profile-service:
     restart: always
     build:
-      context: /home/ubuntu/REPMS/backend/profileproperty-service
+      context: /home/ubuntu/REPMS/backend/profile-service
       dockerfile: Dockerfile
     ports:
       - "8085:8085"
