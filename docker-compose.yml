@@ -17,7 +17,7 @@ services:
       - repms-net
 
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.5.0
+    image: confluentinc/cp-zookeeper:latest
     container_name: zookeeper
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
@@ -29,7 +29,7 @@ services:
       - zookeeper_data:/var/lib/zookeeper
 
   kafka:
-    image: confluentinc/cp-kafka:7.5.0
+    image: confluentinc/cp-kafka:latest
     container_name: kafka
     ports:
       - "9092:9092"
