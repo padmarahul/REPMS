@@ -1,8 +1,8 @@
 import axiosInstance from "../axiosInstance";
 
-const REPMS_LOGIN_BASE_URL = 'http://localhost:8081/repms';
+// const REPMS_LOGIN_BASE_URL = 'http://localhost:8081/repms';
 
-
+const REPMS_LOGIN_BASE_URL = 'http://52.151.249.242:8081/repms';
 
 class LoginServices {
 

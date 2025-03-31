@@ -1,50 +1,27 @@
 import axiosInstance from "../axiosInstance";
 
 
-const PARTPRO_BASE_URL = 'http://40.90.239.103:8080/ppms';
+// const REPMS_INQUIRY_BASE_URL = 'http://localhost:8083/repms/inquiries';
 
+const REPMS_INQUIRY_BASE_URL = 'http://localhost:8083/repms/inquiries';
+class InquiryServices {
 
-class DashboardServices  {
-
-    getAllProducts() {
-        return axiosInstance.get(`${PARTPRO_BASE_URL}/dashboard/getProducts`)
-    }
-
-    getProductDetails(productId){
-      return axiosInstance.get(`${PARTPRO_BASE_URL}/dashboard/getProductDetails`,{
-        params:{
-          productId:productId
-        }
-      })
-    }
-    
-
-  getAllCategories(){
-    return axiosInstance.get(`${PARTPRO_BASE_URL}/dashboard/getCategories`)
+  sendInquiry(inquiryObj) {
+    return axiosInstance.post(`${REPMS_INQUIRY_BASE_URL}/sendInquiry`, inquiryObj)
   }
 
-  getProductsByCategoryName(category){
-    return axiosInstance.get(`${PARTPRO_BASE_URL}/dashboard/getProductsByCategory`,{
-      params:{
-        category:category
-      }
-    });
+  getAllInquiries() {
+    return axiosInstance.get(`${REPMS_INQUIRY_BASE_URL}/getAllInquiries`)
   }
 
-  getLocationDetails(username){
-    return axiosInstance.get(`${PARTPRO_BASE_URL}/dashboard/getLocation`, {
-      params: {
-        username: username
-      }
-    });
+  getInquiryById(inquiryId) {
+    return axiosInstance.get(`${REPMS_INQUIRY_BASE_URL}/getInquiry/${inquiryId}`)
   }
 
-  addVehicleDetails(userId, vehicle){
-    return axiosInstance.post(`${PARTPRO_BASE_URL}/dashboard/addVehicleInfo/${userId}`,vehicle)
+  deleteInquiryById(inquiryId) {
+    return axiosInstance.delete(`${REPMS_INQUIRY_BASE_URL}/deleteInquiry/${inquiryId}`)
   }
-  
-  
 
 }
 
-export default new DashboardServices();
+export default new InquiryServices();

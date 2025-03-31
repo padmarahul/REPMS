@@ -1,33 +1,34 @@
 import axiosInstance from "../axiosInstance";
 
 
- const PARTPRO_BASE_URL = 'http://40.90.239.103:8080/ppms';
+// const REPMS_PROFILE_BASE_URL = 'http://localhost:8085/repms';
 
-
+const REPMS_PROFILE_BASE_URL = 'http://52.151.249.242:8085/repms'
 class CustomerServices {
 
-    updatePersonalDetails(userId, customer) {
-        return axiosInstance.put(`${PARTPRO_BASE_URL}/customer/update/${userId}`, customer)
-    }
-
-    manageFeedback(userId, productId, rating) {
-        return axiosInstance.post(`${PARTPRO_BASE_URL}/customer/${userId}/addorUpdateFeedback`,null,{
-            params:{
-                productId:productId,
-                rating:rating
+    savePropertyForCustomer(userId, propertyId) {
+        return axiosInstance.post(`${REPMS_PROFILE_BASE_URL}/customers/save/${propertyId}`, null, {
+            params: {
+                userId: userId
             }
-          })
+        });
     }
 
-    viewFeedback(userId, productId){
-        return axiosInstance.get(`${PARTPRO_BASE_URL}/customer/${userId}/viewFeedback/${productId}`)
+    getAllSavedProperties(userId) {
+        return axiosInstance.get(`${REPMS_PROFILE_BASE_URL}/customers/getallsavedproperties`, {
+            params: {
+                userId: userId
+            }
+        });
     }
 
-
+    deletePropertyForCustomer(userId, propertyId) {
+        return axiosInstance.delete(`${REPMS_PROFILE_BASE_URL}/customers/removeproperty/${propertyId}`, {
+            params: {
+                userId: userId
+            }
+        });
+    }
 }
 
 export default new CustomerServices();
-
-
-
-

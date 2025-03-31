@@ -12,8 +12,6 @@ import {
 } from "./NavbarElements";
 import { FaBars, FaSearch, FaMapMarkerAlt, FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import DashboardServices from "../../services/DashboardServices";
-import EmployeeServices from "../../services/EmployeeServices";
 import { GlobalStateContext } from '../../GlobalStateContext';
 
 const Navbar = ({ toggle }) => {
@@ -36,18 +34,7 @@ const Navbar = ({ toggle }) => {
     }
   }
 
-  const findEmployeeByUserName = () => {
-    EmployeeServices.findEmployeeByUserName(state.userData.userName).then(response => {
-      const empresp = response.data.employee_type
-      setType(empresp);
-    }).catch(error => {
-      console.log(error)
-    })
-  }
-
-
   useEffect(() => {
-    findEmployeeByUserName();
     window.addEventListener('scroll', changeNav)
   }, []);
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import DashboardServices from '../../services/DashboardServices'
+import PropertyServices from '../../services/PropertyServices'
 import Carousel from "react-elastic-carousel"
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
@@ -14,7 +14,7 @@ import {
     ProductsH2,
     ProductsP,
 } from "./ProductElement";
-
+import StaticImage from '../../common/assets/buy-a-house.svg';
 
 function Products() {
     const navigate = useNavigate();
@@ -25,14 +25,14 @@ function Products() {
         navigate(`/productdetails/${product.productId}`, { state: { product } });
       };
     const getData = () => {
-        DashboardServices.getAllProducts().then(response => {
+        PropertyServices.getAllProperties().then(response => {
             console.log(response.data)
             const modifiedData = response.data.map(item => ({
-                productId: item.productId,
-                productName: item.productName,
-                productImage: base64ToBlob(item.productImage),
-                productDescription: item.productDescription,
-                productPrice: item.productPrice
+                productId: item.id,
+                productName: item.name,
+                productImage: StaticImage,
+                productDescription: "Modern apartment in prime location",
+                productPrice: item.price
             }));
             setData(modifiedData);
             setLoading(e => !e)
@@ -40,22 +40,6 @@ function Products() {
             console.log(error)
         })
     }
-
-    const base64ToBlob = (base64) => {
-        const binaryString = window.atob(base64.split(',')[1]);
-        const bytes = new Uint8Array(binaryString.length);
-        for (let i = 0; i < binaryString.length; i++) {
-          bytes[i] = binaryString.charCodeAt(i);
-        }
-        const imageBlob = new Blob([bytes], { type: 'image/png' })
-        return URL.createObjectURL(imageBlob);
-      };
-
-    
-      
-      
-      
-    
 
     useEffect(() => {
         getData();

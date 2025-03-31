@@ -12,7 +12,6 @@ import {
 } from "./NavbarElements";
 import { FaBars, FaSearch, FaMapMarkerAlt, FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import DashboardServices from "../../services/DashboardServices";
 import { GlobalStateContext } from '../../GlobalStateContext';
 
 const Navbar = ({ toggle }) => {
@@ -34,21 +33,8 @@ const Navbar = ({ toggle }) => {
       setScrollNav(false)
     }
   }
-  const getLocationDetails = () => {
-    DashboardServices.getLocationDetails('rahul_padma').then(response => {
-      console.log("lll", response.data)
-      const locationresp = response.data.address + " OPENS FROM " + response.data.operatingHrs
-      setLocation(locationresp);
-    }).catch(error => {
-      console.log(error)
-    })
-  }
-  const goToCart = (event) => {
-    navigate('/cart');
-  };
 
   useEffect(() => {
-    getLocationDetails();
     window.addEventListener('scroll', changeNav)
   }, []);
 
@@ -113,11 +99,6 @@ const Navbar = ({ toggle }) => {
             <NavItem>
               <FaMapMarkerAlt />
               <NavLinks to="/location-details">{location}</NavLinks>
-            </NavItem>
-            <NavItem>
-              <FaShoppingCart style={{ color: 'whitesmoke' }} onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)} size={30} />
-              <NavLinks onClick={event => goToCart(event)} smooth={true} duration={500} spy={true} exact='true' offset={-80} >View Cart</NavLinks>
             </NavItem>
           </NavMenu>
 

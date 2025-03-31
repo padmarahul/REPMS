@@ -1,28 +1,16 @@
 
 import axiosInstance from "../axiosInstance";
 
-const PARTPRO_BASE_URL = 'http://40.90.239.103:8080/ppms';
+// const REPMS_ANALYTICS_BASE_URL = 'http://localhost:8084/repms';
 
+const REPMS_ANALYTICS_BASE_URL = 'http://52.151.249.242:8084/repms';
 
+class AnalyticsServices {
 
-class PaymentServices  {
-
-    createPayment(userId, cart) {
-        return axiosInstance.post(`${PARTPRO_BASE_URL}/payment/${userId}/create`,cart)
-    }
-
-    trackOrder(orderId) {
-        return axiosInstance.get(`${PARTPRO_BASE_URL}/payment/trackorderdetails/${orderId}`)
-    }
-
-    manageOnlineSales() {
-        return axiosInstance.get(`${PARTPRO_BASE_URL}/payment/getOnlineSales`)
+    getAnalyticsSummary() {
+        return axiosInstance.get(`${REPMS_ANALYTICS_BASE_URL}/analytics/summary`)
     }
 
 }
 
-export default new PaymentServices();
-
-
-
-
+export default new AnalyticsServices();
