@@ -19,8 +19,8 @@ public class SavedPropertyController {
     private SavedPropertyRepository repo;
 
     private final WebClient webClient = WebClient.create();
-    private final String USER_URL = "http://localhost:8081/repms/user/getuser/";
-    private final String PROPERTY_URL = "http://localhost:8082/repms/properties/getProperty/";
+    private final String USER_URL = "http://52.151.249.242:8081/repms/user/getuser/";
+    private final String PROPERTY_URL = "http://52.151.249.242:8082/repms/properties/getProperty/";
 
     @PostMapping("/save/{propertyId}")
     public ResponseEntity<String> save(@RequestParam Long userId, @PathVariable Long propertyId) {
