@@ -42,7 +42,7 @@ services:
   user-service:
     restart: always
     build:
-      context: /home/ubuntu/REPMS/backend/user-service
+      context: /home/azureuser/REPMS/backend/user-service
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
@@ -54,7 +54,7 @@ services:
   property-service:
     restart: always
     build:
-      context: /home/ubuntu/REPMS/backend/property-service
+      context: /home/azureuser/REPMS/backend/property-service
       dockerfile: Dockerfile
     ports:
       - "8082:8082"
@@ -67,7 +67,7 @@ services:
   inquiry-service:
     restart: always
     build:
-      context: /home/ubuntu/REPMS/backend/inquiry-service
+      context: /home/azureuser/REPMS/backend/inquiry-service
       dockerfile: Dockerfile
     ports:
       - "8083:8083"
@@ -80,7 +80,7 @@ services:
   analytics-service:
     restart: always
     build:
-      context: /home/ubuntu/REPMS/backend/analytics-service
+      context: /home/azureuser/REPMS/backend/analytics-service
       dockerfile: Dockerfile
     ports:
       - "8084:8084"
@@ -93,7 +93,7 @@ services:
   profile-service:
     restart: always
     build:
-      context: /home/ubuntu/REPMS/backend/profile-service
+      context: /home/azureuser/REPMS/backend/profile-service
       dockerfile: Dockerfile
     ports:
       - "8085:8085"
@@ -106,7 +106,7 @@ services:
   frontend:
     restart: always
     build:
-      context: /home/ubuntu/REPMS/frontend
+      context: /home/azureuser/REPMS/frontend
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
