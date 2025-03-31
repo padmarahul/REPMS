@@ -15,13 +15,13 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8081/repms/user/login/padmarahul/Password123",
+							"raw": "http://20.42.58.254:8081/repms/user/login/padmarahul/Password123",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8081",
 							"path": [
@@ -41,13 +41,13 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8081/repms/user/login/1/verifyotp/5469",
+							"raw": "http://20.42.58.254:8081/repms/user/login/1/verifyotp/9494",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8081",
 							"path": [
@@ -56,7 +56,7 @@
 								"login",
 								"1",
 								"verifyotp",
-								"5469"
+								"9494"
 							]
 						}
 					},
@@ -69,7 +69,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"userName\": \"padmarahul\",\n    \"password\": \"Password123\",\n    \"firstName\": \"Sai Rahul\",\n    \"lastName\": \"Padma\",\n    \"emailId\": \"sairahul5583@gmail.com\",\n    \"gender\": \"Male\",\n    \"mobileNumber\": 6696667701,\n    \"zipcode\": 76205,\n    \"typeOfUser\": \"Customer\"\n}\n// {\n//     \"userName\": \"admin\",\n//     \"password\": \"admin123\",\n//     \"firstName\": \"Admin\",\n//     \"lastName\": \"Admin\",\n//     \"emailId\": \"padmarahul2109@gmail.com\",\n//     \"gender\": \"Male\",\n//     \"mobileNumber\": 9402956682,\n//     \"zipcode\": 76205,\n//     \"typeOfUser\": \"Admin\"\n// }",
+							"raw": "// {\n//     \"userName\": \"padmarahul\",\n//     \"password\": \"Password123\",\n//     \"firstName\": \"Sai Rahul\",\n//     \"lastName\": \"Padma\",\n//     \"emailId\": \"sairahul5583@gmail.com\",\n//     \"gender\": \"Male\",\n//     \"mobileNumber\": 6696667701,\n//     \"zipcode\": 76205,\n//     \"typeOfUser\": \"Customer\"\n// }\n{\n    \"userName\": \"admin\",\n    \"password\": \"admin123\",\n    \"firstName\": \"Admin\",\n    \"lastName\": \"Admin\",\n    \"emailId\": \"padmarahul2109@gmail.com\",\n    \"gender\": \"Male\",\n    \"mobileNumber\": 9402956682,\n    \"zipcode\": 76205,\n    \"typeOfUser\": \"Admin\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -77,13 +77,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://52.151.249.242:8081/repms/user/signup",
+							"raw": "http://20.42.58.254:8081/repms/user/signup",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8081",
 							"path": [
@@ -101,13 +101,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8081/repms/user/getuser/1",
+							"raw": "http://20.42.58.254:8081/repms/user/getuser/1",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8081",
 							"path": [
@@ -126,13 +126,13 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8081/repms/user/changepassword/padmarahul/Password1234",
+							"raw": "http://20.42.58.254:8081/repms/user/changepassword/padmarahul/Password1234",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8081",
 							"path": [
@@ -152,13 +152,13 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8081/repms/user/resendotp/2",
+							"raw": "http://20.42.58.254:8081/repms/user/resendotp/2",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8081",
 							"path": [
@@ -182,13 +182,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8082/repms/properties/deleteProperty/6",
+							"raw": "http://20.42.58.254:8082/repms/properties/deleteProperty/6",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8082",
 							"path": [
@@ -208,7 +208,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 6,\n    \"name\": \"LogiCore Distribution Center\",\n    \"type\": \"INDUSTRIAL\",\n    \"location\": \"Chicago\",\n    \"size\": 45000,\n    \"price\": 1.2E7,\n    \"status\": \"available\",\n    \"esgScore\": 60.0\n}",
+							"raw": "    {\n        \"id\": 4,\n        \"name\": \"Midtown Business Complex\",\n        \"type\": \"OFFICE\",\n        \"location\": \"Houston\",\n        \"size\": 17000,\n        \"price\": 1.55E7,\n        \"status\": \"under_maintenance\",\n        \"esgScore\": 25.0,\n        \"createdAt\": \"2025-03-31T17:20:35.205465\"\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -216,20 +216,20 @@
 							}
 						},
 						"url": {
-							"raw": "http://52.151.249.242:8082/repms/properties/updateProperty/6",
+							"raw": "http://20.42.58.254:8082/repms/properties/updateProperty/5",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8082",
 							"path": [
 								"repms",
 								"properties",
 								"updateProperty",
-								"6"
+								"5"
 							]
 						}
 					},
@@ -241,13 +241,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8082/repms/properties/getAllProperties",
+							"raw": "http://20.42.58.254:8082/repms/properties/getAllProperties",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8082",
 							"path": [
@@ -265,20 +265,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8082/repms/properties/getProperty/3",
+							"raw": "http://20.42.58.254:8082/repms/properties/getProperty/52",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8082",
 							"path": [
 								"repms",
 								"properties",
 								"getProperty",
-								"3"
+								"52"
 							]
 						}
 					},
@@ -299,13 +299,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://52.151.249.242:8082/repms/properties/saveProperty",
+							"raw": "http://20.42.58.254:8082/repms/properties/saveProperty",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8082",
 							"path": [
@@ -328,13 +328,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8083/repms/inquiries/getAllInquiries",
+							"raw": "http://20.42.58.254:8083/repms/inquiries/getAllInquiries",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8083",
 							"path": [
@@ -352,20 +352,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8083/repms/inquiries/getInquiry/2",
+							"raw": "http://20.42.58.254:8083/repms/inquiries/getInquiry/3",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8083",
 							"path": [
 								"repms",
 								"inquiries",
 								"getInquiry",
-								"2"
+								"3"
 							]
 						}
 					},
@@ -378,7 +378,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"userId\": 1,\n  \"propertyId\": 5,\n  \"message\": \"I’m interested in this property. Can you share more details?\"\n}",
+							"raw": "{\n  \"userId\": 1,\n  \"propertyId\": 4,\n  \"message\": \"I’m interested in this property. Can you share more details?\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -386,13 +386,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://52.151.249.242:8083/repms/inquiries/sendInquiry",
+							"raw": "http://20.42.58.254:8083/repms/inquiries/sendInquiry",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8083",
 							"path": [
@@ -410,20 +410,20 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8083/repms/inquiries/deleteInquiry/2",
+							"raw": "http://20.42.58.254:8083/repms/inquiries/deleteInquiry/4",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8083",
 							"path": [
 								"repms",
 								"inquiries",
 								"deleteInquiry",
-								"2"
+								"4"
 							]
 						}
 					},
@@ -440,13 +440,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8084/repms/analytics/summary",
+							"raw": "http://20.42.58.254:8084/repms/analytics/summary",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8084",
 							"path": [
@@ -469,20 +469,20 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8085/repms/customers/save/2?userId=1",
+							"raw": "http://20.42.58.254:8085/repms/customers/save/4?userId=1",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8085",
 							"path": [
 								"repms",
 								"customers",
 								"save",
-								"2"
+								"4"
 							],
 							"query": [
 								{
@@ -500,13 +500,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8085/repms/customers/getallsavedproperties?userId=1",
+							"raw": "http://20.42.58.254:8085/repms/customers/getallsavedproperties?userId=1",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8085",
 							"path": [
@@ -530,25 +530,25 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://52.151.249.242:8085/repms/customers/removeproperty/2?userId=152",
+							"raw": "http://20.42.58.254:8085/repms/customers/removeproperty/4?userId=1",
 							"protocol": "http",
 							"host": [
-								"52",
-								"151",
-								"249",
-								"242"
+								"20",
+								"42",
+								"58",
+								"254"
 							],
 							"port": "8085",
 							"path": [
 								"repms",
 								"customers",
 								"removeproperty",
-								"2"
+								"4"
 							],
 							"query": [
 								{
 									"key": "userId",
-									"value": "152"
+									"value": "1"
 								}
 							]
 						}
