@@ -166,7 +166,7 @@ const SignUpComponent = ({ lightTopLine }) => {
           <FeaturesContainer>
             <FeaturesRow>
               <TopLine lightTopLine={lightTopLine}>
-                PART PRO WEBSITE
+                REPMS WEBSITE
                 <p style={{ color: "grey", fontSize: "2vh", marginTop: "1vh" }}>
                   Registration Details
                 </p>

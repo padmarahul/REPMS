@@ -10,7 +10,10 @@ import { GlobalStateProvider } from './GlobalStateContext'
 import SignUpComponent from "./pages/SignUpComponent";
 import ForgotPassword from "./pages/ForgotPassword";
 import EmployeeDashboard from "./pages/EmployeeDashboardComponent";
-
+import ManageInquiryComponent from "./pages/ManageInquiryComponent";
+import AddInquiryComponent from "./pages/AddInquiryComponent";
+import SaveProperties from "./pages/SaveProperties";
+import SavedProperties from "./pages/SavedProperties"
 function App() {
   return (
     <>
@@ -23,6 +26,10 @@ function App() {
             <Route path='/dashboard' element={<Dashboard />} exact />
             <Route path='/employee-dashboard' element={< EmployeeDashboard/>} exact />
             <Route path='/changepassword' element={< ForgotPassword/>} exact />
+            <Route path='/manage-inquiry/:id' element={< ManageInquiryComponent/>} exact />
+            <Route path='/add-inquiry/:id1' element={< AddInquiryComponent/>} exact />
+            <Route path='/save-property/:id1' element={< SaveProperties/>} exact />
+            <Route path='/view-properties/:id1' element={< SavedProperties/>} exact />
           </Routes>
         </Router>
         <Footer />

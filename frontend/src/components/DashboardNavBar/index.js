@@ -42,36 +42,31 @@ const Navbar = ({ toggle }) => {
     scroll.scrollToTop()
   }
 
-  const handleAddVehicleDetails = (e) => {
+  const handleSendInquiry = (e) => {
     e.preventDefault()
     const id = state.userData.userId;
-    navigate(`/addvehicledetails/${id}`);
+    navigate(`/manage-inquiry/${id}`);
   }
 
-  const handleUpdatePersonalDetails = (e) => {
+  const handleSaveProperty = (e) => {
     e.preventDefault()
     const id = state.userData.userId;
-    navigate(`/updatepersonaldetails/${id}`);
+    navigate(`/save-property/${id}`);
   }
 
-  const handleTrackingDetails = (e) => {
+  const handleProperties = (e) => {
     e.preventDefault()
     const id = state.userData.userId;
-    navigate(`/order-tracking/${id}`);
+    navigate(`/view-properties/${id}`);
   }
 
-  const handleFeedback =(e)=>{
-    e.preventDefault()
-    const id =state.userData.userId;
-    navigate(`/manage-feedback/${id}`)
-  }
   return (
     <>
       <Nav scrollNav={scrollNav}>
         <NavbarContainer>
           <NavLogo onClick={toggleHome} to="/">
             <h1>
-              Part Pro
+              REPMS
             </h1>
           </NavLogo>
           <MobileIcon onClick={toggle}>
@@ -85,16 +80,13 @@ const Navbar = ({ toggle }) => {
               </NavSearch>
             </NavItem>
             <NavItem>
-              <NavLinks onClick={event => handleAddVehicleDetails(event)} smooth={true} duration={500} spy={true} exact='true' offset={-80} >Add Vehicle Details</NavLinks>
+              <NavLinks onClick={event => handleSendInquiry(event)} smooth={true} duration={500} spy={true} exact='true' offset={-80} >Send Inquiry</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks onClick={event => handleUpdatePersonalDetails(event)} smooth={true} duration={500} spy={true} exact='true' offset={-80} >Update Personal Details</NavLinks>
+              <NavLinks onClick={event => handleSaveProperty(event)} smooth={true} duration={500} spy={true} exact='true' offset={-80} > Save Properties</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks onClick={event => handleTrackingDetails(event)} smooth={true} duration={500} spy={true} exact='true' offset={-80} >Track Order Details</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks onClick={event => handleFeedback(event)} smooth={true} duration={500} spy={true} exact='true' offset={-80} >Add Feedback</NavLinks>
+              <NavLinks onClick={event => handleProperties(event)} smooth={true} duration={500} spy={true} exact='true' offset={-80} >View Saved Properties</NavLinks>
             </NavItem>
             <NavItem>
               <FaMapMarkerAlt />

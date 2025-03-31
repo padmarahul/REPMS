@@ -3,7 +3,7 @@ import axiosInstance from "../axiosInstance";
 
 // const REPMS_PROPERTY_BASE_URL = 'http://localhost:8082/repms';
 
-const REPMS_PROPERTY_BASE_URL = 'http://52.151.249.242:8082/repms';
+const REPMS_PROPERTY_BASE_URL = 'http://20.42.58.254:8082/repms';
 
 class PropertyServices {
     saveProperty(property) {

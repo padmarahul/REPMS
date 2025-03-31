@@ -19,8 +19,8 @@ public class SavedPropertyController {
     private SavedPropertyRepository repo;
 
     private final WebClient webClient = WebClient.create();
-    private final String USER_URL = "http://52.151.249.242:8081/repms/user/getuser/";
-    private final String PROPERTY_URL = "http://52.151.249.242:8082/repms/properties/getProperty/";
+    private final String USER_URL = "http://20.42.58.254:8081/repms/user/getuser/";
+    private final String PROPERTY_URL = "http://20.42.58.254:8082/repms/properties/getProperty/";
 
     @PostMapping("/save/{propertyId}")
     public ResponseEntity<String> save(@RequestParam Long userId, @PathVariable Long propertyId) {
@@ -45,7 +45,7 @@ public class SavedPropertyController {
         for (SavedProperty sp : saved) {
             try {
                 Object prop = webClient.get()
-                        .uri("http://localhost:8082/repms/properties/getProperty/" + sp.getPropertyId())
+                        .uri("http://20.42.58.254:8082/repms/properties/getProperty/" + sp.getPropertyId())
                         .retrieve()
                         .bodyToMono(Object.class)
                         .block();

@@ -3,7 +3,7 @@ import axiosInstance from "../axiosInstance";
 
 // const REPMS_INQUIRY_BASE_URL = 'http://localhost:8083/repms/inquiries';
 
-const REPMS_INQUIRY_BASE_URL = 'http://localhost:8083/repms/inquiries';
+const REPMS_INQUIRY_BASE_URL = 'http://20.42.58.254:8083/repms/inquiries';
 class InquiryServices {
 
   sendInquiry(inquiryObj) {

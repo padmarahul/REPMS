@@ -48,7 +48,7 @@ function Products() {
     return (
         <>
             <ProductsContainer id="products">
-                <ProductsH1>SPONSORED PRODUCTS </ProductsH1>
+                <ProductsH1>PROPERTIES </ProductsH1>
                 {loading
                     ? <div style={{
                         margin: "auto",
