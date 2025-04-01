@@ -22,7 +22,7 @@ function Products() {
     const [loading, setLoading] = useState(true)
     const handleProductClick = (event,product) => {
         console.log(event)
-        navigate(`/productdetails/${product.productId}`, { state: { product } });
+        navigate(`/propertydetails/${product.productId}`, { state: { product } });
       };
     const getData = () => {
         PropertyServices.getAllProperties().then(response => {

@@ -14,6 +14,7 @@ import ManageInquiryComponent from "./pages/ManageInquiryComponent";
 import AddInquiryComponent from "./pages/AddInquiryComponent";
 import SaveProperties from "./pages/SaveProperties";
 import SavedProperties from "./pages/SavedProperties"
+import PropertyDetailsComponent from "./pages/PropertyDetailsComponent";
 function App() {
   return (
     <>
@@ -30,6 +31,7 @@ function App() {
             <Route path='/add-inquiry/:id1' element={< AddInquiryComponent/>} exact />
             <Route path='/save-property/:id1' element={< SaveProperties/>} exact />
             <Route path='/view-properties/:id1' element={< SavedProperties/>} exact />
+            <Route path='/propertydetails/:id' element={< PropertyDetailsComponent/>} exact />
           </Routes>
         </Router>
         <Footer />
