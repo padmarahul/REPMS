@@ -70,7 +70,7 @@ services:
       context: /home/azureuser/REPMS/backend/inquiry-service
       dockerfile: Dockerfile
     ports:
-      - "8083:8083"
+      - "8086:8086"
     depends_on:
       - postgres
       - kafka

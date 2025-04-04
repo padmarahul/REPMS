@@ -24,7 +24,7 @@ public class PropertyController {
     public ResponseEntity<Property> create(@RequestBody Property property) {
         try {
             Property saved = repo.save(property);
-            eventProducer.sendPropertyEvent(saved);
+//            eventProducer.sendPropertyEvent(saved);
             return ResponseEntity.ok(saved);
         }
         catch (Exception e) {

@@ -17,14 +17,16 @@ public class AnalyticsInquiry {
     private Long userId;
     private Long propertyId;
     private LocalDateTime createdAt;
+    private String message;
 
     public AnalyticsInquiry() {}
 
-    public AnalyticsInquiry(Long id, Long userId, Long propertyId, LocalDateTime createdAt) {
+    public AnalyticsInquiry(Long id, Long userId, Long propertyId, LocalDateTime createdAt, String message) {
         this.id = id;
         this.userId = userId;
         this.propertyId = propertyId;
         this.createdAt = createdAt;
+        this.message = message;
     }
 
     @Override
@@ -34,7 +36,16 @@ public class AnalyticsInquiry {
                 ", userId=" + userId +
                 ", propertyId=" + propertyId +
                 ", createdAt=" + createdAt +
+                ", message='" + message +
                 '}';
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public Long getId() {

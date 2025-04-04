@@ -38,7 +38,7 @@ public class InquiryController {
         }
 
         Inquiry saved = repo.save(inquiry);
-        producer.sendInquiryEvent(saved);
+//        producer.sendInquiryEvent(saved);
         return ResponseEntity.ok(saved);
     }
 

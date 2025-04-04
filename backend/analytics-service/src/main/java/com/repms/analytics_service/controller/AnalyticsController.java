@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ArrayList;
@@ -44,6 +45,11 @@ public class AnalyticsController {
         res.put("topLocations", locations);
 
         res.put("inquiriesLast0Days", inquiryRepo.countRecent(LocalDateTime.now().minusDays(0)));
+        LocalDate today = LocalDate.now();
+        LocalDateTime start = today.atStartOfDay();
+        LocalDateTime end = today.plusDays(1).atStartOfDay();
+
+        res.put("countInquiriesToday", inquiryRepo.countInquiriesToday(start, end));
 
         return ResponseEntity.ok(res);
     }
