@@ -16,28 +16,28 @@ services:
     networks:
       - repms-net
 
-  zookeeper:
-    image: confluentinc/cp-zookeeper:latest
-    container_name: zookeeper
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-    ports:
-      - "2181:2181"
-    networks:
-      - repms-net
+  # zookeeper:
+  #   image: confluentinc/cp-zookeeper:latest
+  #   container_name: zookeeper
+  #   environment:
+  #     ZOOKEEPER_CLIENT_PORT: 2181
+  #   ports:
+  #     - "2181:2181"
+  #   networks:
+  #     - repms-net
 
-  kafka:
-    image: confluentinc/cp-kafka:latest
-    container_name: kafka
-    ports:
-      - "9092:9092"
-    environment:
-      KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
-      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-    networks:
-      - repms-net
+  # kafka:
+  #   image: confluentinc/cp-kafka:latest
+  #   container_name: kafka
+  #   ports:
+  #     - "9092:9092"
+  #   environment:
+  #     KAFKA_BROKER_ID: 1
+  #     KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+  #     KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+  #     KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+  #   networks:
+  #     - repms-net
 
   user-service:
     restart: always
@@ -48,7 +48,7 @@ services:
       - "8081:8081"
     depends_on:
       - postgres
-      - kafka
+      # - kafka
     networks:
       - repms-net
   property-service:
@@ -60,7 +60,7 @@ services:
       - "8082:8082"
     depends_on:
       - postgres
-      - kafka
+      # - kafka
     networks:
       - repms-net
 
@@ -73,7 +73,7 @@ services:
       - "8086:8086"
     depends_on:
       - postgres
-      - kafka
+      # - kafka
     networks:
       - repms-net
 
@@ -86,7 +86,7 @@ services:
       - "8084:8084"
     depends_on:
       - postgres
-      - kafka
+      # - kafka
     networks:
       - repms-net
 
@@ -99,7 +99,7 @@ services:
       - "8085:8085"
     depends_on:
       - postgres
-      - kafka
+      # - kafka
     networks:
       - repms-net
 
