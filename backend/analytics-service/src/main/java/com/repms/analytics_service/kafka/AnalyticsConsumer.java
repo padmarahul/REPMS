@@ -25,7 +25,7 @@ public class AnalyticsConsumer {
 
     // 🔹 Listener for properties
     @KafkaListener(
-            topics = "repms.public.properties",
+            topics = "rs.public.properties",
             groupId = "analytics-group",
             concurrency = "3"
     )
@@ -66,7 +66,7 @@ public class AnalyticsConsumer {
 
     // 🔹 Listener for inquiries
     @KafkaListener(
-            topics = "repms.public.inquires",
+            topics = "rs.public.inquires",
             groupId = "analytics-group",
             concurrency = "3" // adjust this to match your inquiry topic partitions
     )
