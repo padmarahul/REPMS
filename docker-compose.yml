@@ -46,7 +46,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
-    depends_on:
+    # depends_on:
       # - postgres
       # - kafka
     networks:
@@ -58,7 +58,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8082:8082"
-    depends_on:
+    # depends_on:
       # - postgres
       # - kafka
     networks:
@@ -71,7 +71,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8086:8086"
-    depends_on:
+    # depends_on:
       # - postgres
       # - kafka
     networks:
@@ -84,7 +84,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8084:8084"
-    depends_on:
+    # depends_on:
       # - postgres
       # - kafka
     networks:
@@ -97,7 +97,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8085:8085"
-    depends_on:
+    # depends_on:
       # - postgres
       # - kafka
     networks:
