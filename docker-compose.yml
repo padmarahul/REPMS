@@ -2,19 +2,19 @@ version: '3.9'
 
 services:
 
-  postgres:
-    image: postgres:17
-    container_name: postgres
-    restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Sairahul5583@
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    networks:
-      - repms-net
+  # postgres:
+  #   image: postgres:17
+  #   container_name: postgres
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: Sairahul5583@
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - repms-net
 
   # zookeeper:
   #   image: confluentinc/cp-zookeeper:latest
@@ -47,7 +47,7 @@ services:
     ports:
       - "8081:8081"
     depends_on:
-      - postgres
+      # - postgres
       # - kafka
     networks:
       - repms-net
@@ -59,7 +59,7 @@ services:
     ports:
       - "8082:8082"
     depends_on:
-      - postgres
+      # - postgres
       # - kafka
     networks:
       - repms-net
@@ -72,7 +72,7 @@ services:
     ports:
       - "8086:8086"
     depends_on:
-      - postgres
+      # - postgres
       # - kafka
     networks:
       - repms-net
@@ -85,7 +85,7 @@ services:
     ports:
       - "8084:8084"
     depends_on:
-      - postgres
+      # - postgres
       # - kafka
     networks:
       - repms-net
@@ -98,7 +98,7 @@ services:
     ports:
       - "8085:8085"
     depends_on:
-      - postgres
+      # - postgres
       # - kafka
     networks:
       - repms-net
@@ -119,8 +119,8 @@ services:
       - analytics-service
       - profile-service
 
-volumes:
-  pgdata:
+# volumes:
+#   pgdata:
 
 networks:
   repms-net:
